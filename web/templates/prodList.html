@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='/Template/css/boxicons.min.css' rel='stylesheet'>
+    <link href="/Template/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <link rel="stylesheet" href="/Template/css/style.css">
+
+    <title>Ventas de Garajes</title>
+
+</head>
+
+<body>
+    <header class="p-3 text-bg"
+        style="position: relative; top: -10px; height: 100px; background-color: rgb(124, 2, 67);">
+        <div class="container">
+            <a class="navbar-brand" href="/Template/index.html"><img src="/Template/media/CubaFashion.png" alt=""
+                    style="position: relative;top:4px;left:-100px; width: 70px;"></a>
+            <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+                <a href="/" class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none">
+
+                </a>
+
+                <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0"
+                    style="position: relative; top: -50px; left: -30px;">
+                    <li><a href="/Template/index.html" class="nav-link px-2 text-white">Inicio</a></li>
+                    <li><a href="/Template/Inicio/garaUser.html" class="nav-link px-2 text-white">Garajes</a></li>
+                    <li><a href="{% if not username %}/Template/Inicio/product.html{% else %}/Template/prodUser.html{% endif %}"
+                            class="nav-link px-2 text-white">Productos</a></li>
+                    <li><a href="#somos-ventas" class="nav-link px-2 text-white">Acerca de</a></li>
+                </ul>
+
+                <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3" role="search"
+                    style="position: relative; top: -50px; left: 80px;" action="/search/" method="POST">
+                    {% csrf_token %}
+                    <input type="search" class="form-control form-control-dark text-bg" id="buscador"
+                        placeholder="Buscar..." aria-label="Search" name="search">
+                </form>
+
+                <div class="text-end" style="position: relative; top: -50px; left: 80px;">
+                    {% if not username %}
+                    <a href="/auth/signin.html"><button type="button" class="btn btn-outline-light me-2" style="height: 40px">Iniciar
+                            sesión</button></a>
+                    <a href="/auth/sign-up.html"><button type="button" class="btn btn text-white"
+                            style="background-color: black;height: 40px">
+                            Registrarse </button></a>
+                    {% else %}
+                    <a href="/logout"><i class='bx bx-user-circle' style="color: white; font-size: 30px;"></i></a>
+                    {% endif %}
+                </div>
+
+            </div>
+        </div>
+    </header>
+
+
+
+    <main class="container relative">
+        <div class="container" style="display: flex; justify-content: center;">
+            <div class="texto" style=" position: relative; top:50px; left: 20px; width: 50%; text-align: center;">
+                <h1 style="font-size: 70px;"><strong><span class="color-acento">Administrar</span></strong></h1>
+            </div>
+        </div>
+        {% if isowner %}
+        <!--<div class="absolute absolute1"> -->
+        <div class="container" style="display:flexbox; margin: auto;">
+            <div style="margin-bottom: 30px;margin-top: 30px;">
+                <table>
+                    <p><strong>Garaje</strong></p>
+                    <thead>
+                        <tr style="background-color: pink">
+                            <th style="text-align: center;min-width: 200px;">Foto</th>
+                            <th style="text-align: center;min-width: 200px;">Nombre</th>
+                            <th style="text-align: center;min-width: 200px;">Dirección</th>
+                            <th style="text-align: center;min-width: 200px;">Propietario</th>
+                            <th style="text-align: center;min-width: 200px;">Teléfono</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th><img src="{{garages.photo.url}}" alt="photo" style="width: 64px;"></th>
+                            <th>{{garages.nombre}}</th>
+                            <th>{{garages.address}}</th>
+                            <th>{{garages.owner}}</th>
+                            <th>{{garages.telephone}}</th>
+                        </tr>
+                    </tbody>
+                </table>
+                <table style="border-color: white;">
+                    <tr>
+                        <th>
+                            <form method="POST" action="/editGarageView/">
+                                {% csrf_token %}
+                                <input type="number" name="id" value="{{garages.id}}" style="display: none;" />
+                                <button type="submit" style="color: white; margin-top: 30px;">Editar</button>
+                            </form>
+                        </th>
+                        <th>
+                            <form method="POST" action="/delGarage/">
+                                {% csrf_token %}
+                                <button type="submit" style="color: white; margin-top: 30px;"> Eliminar</button>
+                            </form>
+                        </th>
+                    </tr>
+                </table>
+            </div>
+            <table>
+                <p><strong>Productos</strong> </p>
+                <thead>
+                    <tr>
+                        <th style="text-align: center; min-width: 90px;">Foto</th>
+                        <th style="text-align: center; min-width: 90px;">Nombre</th>
+                        <th style="text-align: center; min-width: 90px;">Categoría</th>
+                        <th style="text-align: center; min-width: 90px;">Precio</th>
+                        <th style="text-align: center; min-width: 90px;">Ventas</th>
+                        <th style="text-align: center; min-width: 90px;">Cantidad</th>
+                        <th style="text-align: center; min-width: 90px;">Descuento</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for x in productos %}
+                    <tr>
+                        <td><img src="{{x.photo.url}}" alt="photo" style="width: 64px;"></td>
+                        <td>{{x.nombre}}</td>
+                        <td>{{x.categoria}}</td>
+                        <td>{{x.precio}}</td>
+                        <td>{{x.ventas}}</td>
+                        <td>{{x.cantidad}}</td>
+                        <td>{{x.descuento}}</td>
+                        <td>
+                            <form method="POST" action="/editProductoView/">
+                                {% csrf_token %}
+                                <input type="number" name="id" value="{{x.id}}" style="display: none;" />
+                                <button type="submit" style="color: white">Modificar</button>
+                            </form>
+                        </td>
+                        <td>
+                            <form method="POST" action="/deleteProducto/">
+                                <input type="number" name="id" value="{{x.id}}" style="display: none;" />
+                                {% csrf_token %}
+                                <button type="submit" style="color: white">Borrar</button>
+                            </form>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+                <tfoot>
+                </tfoot>
+            </table>
+            <a href="/Template/User/prodCreate.html">
+                <button type="button" style="color: white; margin-top: 30px;">Agregar Producto
+                </button>
+            </a>
+
+            <p style="margin-top: 30px;"><strong>Promoción</strong> </p>
+            <table>
+                <thead>
+                    <tr style="background-color: pink">
+                        <th style="text-align: center;min-width: 200px;">Foto</th>
+                        <th style="text-align: center;min-width: 150px;">Fecha de Expiración</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for x in promociones %}
+                    <tr>
+                        <th><img src="{{x.photo}}" alt="photo" style="width: 64px;"></th>
+                        <th>{{x.expiration_date}}</th>
+                       <!--  <th>
+                            <form method="POST" , action="/delPromocion/">
+                                {% csrf_token %}
+                                <input style="display: none;" name="id" value="{{x.id}}" />
+                                <button type="submit" style="color: white">Borrar</button>
+                            </form>
+                        </th>-->
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+            <a href="/Template/User/promocionCreate.html">
+                <button type="button" style="color: white; margin-top: 30px;">Agregar Promoción</button>
+            </a>
+
+        </div>
+        {% endif %}
+
+    </main>
+</body>
+
+</html>

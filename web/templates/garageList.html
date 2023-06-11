@@ -1,0 +1,53 @@
+{% extends 'header.html' %}
+{% block content %}
+<main class="container relative">
+    <div class="container" style="display: flex; justify-content: center;">
+        <div class="texto" style=" position: relative; top:50px; left: 20px; width: 50%; text-align: center;">
+            <h1 style="font-size: 70px;">
+                <strong>
+                    <span class="color-acento"> Administrar Garages</span>
+                </strong>
+            </h1>
+        </div>
+    </div>
+    {% if isowner %}
+    <div class="absolute absolute1">
+        <table>
+            <thead>
+                <tr>
+                    <th>Foto</th>
+                    <th>Nombre</th>
+                    <th>Direccion</th>
+                    <th>Propietario</th>
+                    <th>Telefono</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for garage in garages %}
+                <tr>
+                    <td><img src="{{garage.photo}}" alt="picture" style="width: 64px;"></td>
+                    <td>{{garage.nombre}}</td>
+                    <td>{{garage.address}}</td>
+                    <td>{{garage.owner}}</td>
+                    <td>{{garage.telephone}}</td>
+                    <td>
+                        <a href="/deleteGarage/{{garage.id}}"><button type="button">Borrar</button></a>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td>
+                        <a href="/addGarage/"><button type="button">Agregar Garage</button></a>
+                    </td>
+                </tr>
+            </tfoot>
+        </table>
+    </div>
+
+    {% endif %}
+
+</main>
+
+{% endblock %}

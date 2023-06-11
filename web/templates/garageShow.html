@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='/Template/css/boxicons.min.css' rel='stylesheet'>
+    <link href="/Template/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <link rel="stylesheet" href="/Template/css/style.css">
+
+    <title>Ventas de Garajes</title>
+
+</head>
+
+<body>
+    <header class="p-3 text-bg"
+        style="position: relative; top: -10px; height: 100px; background-color: rgb(124, 2, 67);">
+        <div class="container">
+            <a class="navbar-brand" href="/Template/index.html"><img src="/Template/media/CubaFashion.png" alt=""
+                    style="position: relative;top:4px;left:-100px; width: 70px;"></a>
+            <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+                <a href="/" class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none">
+
+                </a>
+
+                <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0"
+                    style="position: relative; top: -50px; left: -30px;">
+                    <li><a href="/Template/index.html" class="nav-link px-2 text-white">Inicio</a></li>
+                    <li><a href="/Template/Inicio/garaUser.html" class="nav-link px-2 text-white">Garajes</a></li>
+                    <li><a href="{% if not username %}/Template/Inicio/product.html{% else %}/Template/prodUser.html{% endif %}"
+                            class="nav-link px-2 text-white">Productos</a></li>
+                    <li><a href="#somos-ventas" class="nav-link px-2 text-white">Acerca de</a></li>
+                </ul>
+
+                <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3" role="search"
+                    style="position: relative; top: -50px; left: 80px;" action="/search/" method="POST">
+                    {% csrf_token %}
+                    <input type="search" class="form-control form-control-dark text-bg" id="buscador"
+                        placeholder="Buscar..." aria-label="Search" name="search">
+                </form>
+
+                <div class="text-end" style="position: relative; top: -50px; left: 80px;">
+                    {% if not username %}
+                    <a href="/auth/signin.html"><button type="button" class="btn btn-outline-light me-2" style="height: 40px">Iniciar
+                            sesión</button></a>
+                    <a href="/auth/sign-up.html"><button type="button" class="btn btn text-white"
+                            style="background-color: black; height: 40px">
+                            Registrarse </button></a>
+                    {% else %}
+                    <a href="/logout"><i class='bx bx-user-circle' style="color: white; font-size: 30px;"></i></a>
+                    {% endif %}
+                </div>
+
+
+            </div>
+        </div>
+    </header>
+<main class="relative">
+    <!--  <div class="texto" style=" position: relative; top:50px; left: 20px; width: 50%; text-align: center;"> -->
+    <div class="elemento">
+        <p><strong> Garage</strong></p>
+        <table>
+            <tr style="background-color: pink">
+                <th style="text-align: center;min-width: 200px;">Nombre</th>
+                <th style="text-align: center;min-width: 200px;">Dirección</th>
+                <th style="text-align: center;min-width: 200px;">Teléfono</th>
+                <th style="text-align: center;min-width: 200px;">Propietario</th>
+            </tr>
+            <tr>
+                <th>{{x.nombre}}</th>
+                <th>{{x.address}}</th>
+                <th>{{x.telephone}}</th>
+                <th>{{x.owner}}</th>
+            </tr>
+        </table>
+
+        <p style="margin-top: 30px;"><strong> Productos: </strong> {{len}}</p>
+        <table>
+            <tr style="background-color: pink">
+                <th style="text-align: center;min-width: 160px;">Foto</th>
+                <th style="text-align: center;min-width: 160px;">Nombre</th>
+                <th style="text-align: center;min-width: 160px;">Categoría</th>
+                <th style="text-align: center;min-width: 160px;">Precio</th>
+                <th style="text-align: center;min-width: 160px;">Cantidad</th>
+            </tr>
+            {% for x in yy %}
+            <tr onclick="product({{x.id}})">
+                <th> <img src="{{x.photo.url}}" alt="photo" style="width: 64px;"> </th>
+                <th>{{x.nombre}}</th>
+                <th>{{x.categoria.nombre}}</th>
+                <th>{{x.precio}}</th>
+                <th>{{x.cantidad}}</th>
+            </tr>
+            {% endfor %}
+        </table>
+
+
+    </div>
+</main>
+    <script src="/Template/scripts/boxicons.js"></script>
+    <script src="/Template/scripts/bootstrap.bundle.min.js"
+        integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+        crossorigin="anonymous"></script>
+    <script src="/Template/scripts/jquery.min.js"></script>
+    <script src="/Template/scripts/jqvalidate.js"> </script>
+
+    <script src="/Template/scripts/index.js"></script>
+</body>
+</html>  

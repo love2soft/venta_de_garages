@@ -1,0 +1,66 @@
+{% extends 'header.html' %}
+{% block content %}
+<style>
+  footer{
+    display:none;
+  }
+</style>
+<main class="container">
+  <section id="garage">
+    <div class="container" style="display: flex; justify-content: center;">
+      <img src="/Template/media/CubaFashion.png" style="height: 300px; width: 300px; border-radius: 80px;">
+      <div class="texto" style=" position: relative; top:90px; left: 20px; width: 50%; text-align: center;">
+        <h1 style="font-size: 80px;"><strong><span class="color-acento">Garajes</span></strong></h1>
+        <a href="
+          {% if isowner and glen == 0 %}
+          /Template/User/garageCreate.html
+          {% elif isowner and glen == 1 %}
+          /Template/User/prodList.html
+          {% else %}
+          /auth/sign-up.html 
+          {% endif %}">
+
+          <button type="button" class="btn btn text-white"
+            style=" position: relative; top: 30px; left: 50px; float: right; background-color: rgb(124, 2, 67);font-size: 30px; width:300px; height:70px">
+            <strong>{% if isowner %}Administrar{% else %}Quiero Vender{% endif %}</strong>
+          </button></a>
+      </div>
+    </div>
+    </div>
+  </section>
+
+  <div class="container-items" style="margin-top: 30px;">
+    <!-- 1-->
+    {% for element in garages %}
+    <div class="items" onclick="garage({{element.id}})">
+      <figure>
+        <img src="{{element.photo.url}}" alt="garage" />
+      </figure>
+      <div class="info-product">
+        <h4>{{element.nombre}}</h4>
+        <p class="price"></p><strong>Dueño:</strong> {{element.owner}}</p>
+        <button style="background-color:rgb(77, 128, 238);">Visitar</button>
+      </div>
+    </div>
+    {% endfor %}
+
+
+  </div>
+
+  <section id="somos-ventas">
+    <div class="container" style="display: flex; justify-content: center;">
+      <img src="/Template/media/CubaFashion.png" style="height: 300px; width: 300px;">
+      <div class="texto" style="position: relative; top:90px; left: 20px; width: 50%; text-align: center;">
+        <h2><strong>Somos <span class="color-acento">CubaFashion!</span></strong></h2>
+        <p>Un proyecto que tiene como objetivo contribuir al enriquecimiento
+          del mercado informal, especificamente en lo relacionado con las ventas
+          de garaje en nuestro país, con el fin de brindar un servicio más rápido
+          y eficaz, garantizando la promoción y seguridad de las ventas.</p>
+      </div>
+    </div>
+    </div>
+  </section>
+
+</main>
+
+{% endblock %}

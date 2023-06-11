@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='/Template/css/boxicons.min.css' rel='stylesheet'>
+    <link href="/Template/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <link rel="stylesheet" href="/Template/css/style.css">
+
+    <title>Ventas de Garajes</title>
+
+</head>
+
+<body>
+    <header class="p-3 text-bg"
+        style="position: relative; top: -10px; height: 100px; background-color: rgb(124, 2, 67);">
+        <div class="container">
+            <a class="navbar-brand" href="/Template/index.html"><img src="/Template/media/CubaFashion.png" alt=""
+                    style="position: relative;top:4px;left:-100px; width: 70px;"></a>
+            <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+                <a href="/" class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none">
+
+                </a>
+
+                <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0"
+                    style="position: relative; top: -50px; left: -30px;">
+                    <li><a href="/Template/index.html" class="nav-link px-2 text-white">Home</a></li>
+                    <li><a href="/Template/Inicio/garages.html" class="nav-link px-2 text-white">Garajes</a></li>
+                    <li><a href="/Template/Inicio/product.html" class="nav-link px-2 text-white">Productos</a></li>
+                    <li><a href="#somos-ventas" class="nav-link px-2 text-white">Acerca de</a></li>
+                </ul>
+
+                <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3" role="search"
+                    style="position: relative; top: -50px; left: 80px;">
+                    <input type="search" class="form-control form-control-dark text-bg" id="buscador"
+                        placeholder="Buscar..." aria-label="Search">
+                </form>
+
+                <div class="text-end" style="position: relative; top: -50px; left: 80px;">
+                    <a href="/auth/signin.html"><button type="button" class="btn btn-outline-light me-2">Iniciar
+                            sesión</button></a>
+                    <a href="/auth/sign-up.html"><button type="button" class="btn btn text-white"
+                            style="background-color: black;">
+                            Registrarse </button></a>
+                </div>
+                <a class="nav-link dropdown-toggle text-white" href="#" role="button" data-bs-toggle="dropdown"
+                    aria-expanded="false" style="position: relative; top: -50px; left: 100px;">
+                    ES
+                </a>
+                <ul class="dropdown-menu">
+                    <li>
+                        <a class="dropdown-item" href="#"><img src="media/icons/icons8-usa-100.png"
+                                style="width: 30px;">EN</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </header>
+
+
+    <div class="container-icon">
+        <a href=""><i class='bx bx-cart' style="color:black; font-size: 30px; float: right;"></i></a>
+    </div>
+
+
+
+    <!-- Carrusel-->
+    <main class="container">
+        <div id="conteItemsCarrusel">
+            <div class="itemCarrusel" id="itemCarrusel-1">
+                <div class="tarjetaCarrusel" id="tarjetaCarrusel-1">
+                    <img src="media/1.jpg" class="d-block w-100">
+                </div>
+                <div class="flechasCarrusel">
+                    <a href="#" onclick="apply_patch(4)">
+                        <i class='bx bx-chevron-left'></i>
+                    </a>
+                    <a href="#" onclick="apply_patch(1)">
+                        <i class='bx bx-chevron-right'></i>
+                    </a>
+                </div>
+            </div>
+            <div class="itemCarrusel" id="itemCarrusel-2">
+                <div class="tarjetaCarrusel" id="tarjetaCarrusel-2">
+                    <img src="media/2.jpg" class="d-block w-100">
+                </div>
+                <div class="flechasCarrusel">
+                    <a href="#" onclick="apply_patch(0)">
+                        <i class='bx bx-chevron-left'></i>
+                    </a>
+                    <a href="#" onclick="apply_patch(2)">
+                        <i class='bx bx-chevron-right'></i>
+                    </a>
+                </div>
+            </div>
+            <div class="itemCarrusel" id="itemCarrusel-3">
+                <div class="tarjetaCarrusel" id="tarjetaCarrusel-3">
+                    <img src="media/3.jpg" class="d-block w-100">
+                </div>
+                <div class="flechasCarrusel">
+                    <a href="#" onclick="apply_patch(1)">
+                        <i class='bx bx-chevron-left'></i>
+                    </a>
+                    <a href="#" onclick="apply_patch(3)">
+                        <i class='bx bx-chevron-right'></i>
+                    </a>
+                </div>
+            </div>
+            <div class="itemCarrusel" id="itemCarrusel-4">
+                <div class="tarjetaCarrusel" id="tarjetaCarrusel-4">
+                    <img src="media/4.jpg" class="d-block w-100">
+                </div>
+                <div class="flechasCarrusel">
+                    <a href="#" onclick="apply_patch(2)">
+                        <i class='bx bx-chevron-left'></i>
+                    </a>
+                    <a href="#" onclick="apply_patch(4)">
+                        <i class='bx bx-chevron-right'></i>
+                    </a>
+                </div>
+            </div>
+            <div class="itemCarrusel" id="itemCarrusel-5">
+                <div class="tarjetaCarrusel" id="tarjetaCarrusel-5">
+                    <img src="media/5.jpg" class="d-block w-100">
+                </div>
+                <div class="flechasCarrusel">
+                    <a href="#" onclick="apply_patch(3)">
+                        <i class='bx bx-chevron-left'></i>
+                    </a>
+                    <a href="#" onclick="apply_patch(0)">
+                        <i class='bx bx-chevron-right'></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div id="contePuntos">
+            <a href="#" onclick="apply_patch(0)"><i class='bx bx-wifi-0'></i></a>
+            <a href="#" onclick="apply_patch(1)"><i class='bx bx-wifi-0'></i></a>
+            <a href="#" onclick="apply_patch(2)"><i class='bx bx-wifi-0'></i></a>
+            <a href="#" onclick="apply_patch(3)"><i class='bx bx-wifi-0'></i></a>
+            <a href="#" onclick="apply_patch(4)"><i class='bx bx-wifi-0'></i></a>
+        </div>
+
+        <h6><strong>Productos más vendidos</strong></h6>
+
+
+        <div class="container-items">
+            <div class="item">
+                <figure>
+                    <img src="media/vestidobeba.jpg" alt="producto" />
+                </figure>
+                <div class="info-product">
+                    <h4>Vestido</h4>
+                    <p class="price"></p>$500</p>
+                    <button>Añadir al carrito</button>
+                </div>
+            </div>
+            <div class="item">
+                <figure>
+                    <img src="media/blusa.jpeg" alt="producto" />
+                </figure>
+                <div class="info-product">
+                    <h4>Blusa</h4>
+                    <p class="price"></p>$600</p>
+                    <button>Añadir al carrito</button>
+                </div>
+            </div>
+            <div class="item">
+                <figure>
+                    <img src="media/crocs.jpeg" alt="producto" />
+                </figure>
+                <div class="info-product">
+                    <h4>Crocs</h4>
+                    <p class="price"></p>$3000</p>
+                    <button>Añadir al carrito</button>
+                </div>
+            </div>
+            <div class="item">
+                <figure>
+                    <img src="media/relojInt.jpg" alt="producto" />
+                </figure>
+                <div class="info-product">
+                    <h4>Reloj</h4>
+                    <p class="price"></p>$2500</p>
+                    <button>Añadir al carrito</button>
+                </div>
+            </div>
+            <div class="item">
+                <figure>
+                    <img src="media/audifonos.jpg" alt="producto" />
+                </figure>
+                <div class="info-product">
+                    <h4>Audifonos</h4>
+                    <p class="price"></p>$5000</p>
+                    <button>Añadir al carrito</button>
+                </div>
+            </div>
+            <div class="item">
+                <figure>
+                    <img src="media/sudadera.jpg" alt="producto" />
+                </figure>
+                <div class="info-product">
+                    <h4>Abrigo</h4>
+                    <p class="price"></p>$1500</p>
+                    <button>Añadir al carrito</button>
+                </div>
+            </div>
+            <div class="item">
+                <figure>
+                    <img src="media/botas.jpeg" alt="producto" />
+                </figure>
+                <div class="info-product">
+                    <h4>Botas</h4>
+                    <p class="price"></p>$5000</p>
+                    <button>Añadir al carrito</button>
+                </div>
+            </div>
+            <div class="item">
+                <figure>
+                    <img src="media/cartera.jpg" alt="producto" />
+                </figure>
+                <div class="info-product">
+                    <h4>Monedero</h4>
+                    <p class="price"></p>$1000</p>
+                    <button>Añadir al carrito</button>
+                </div>
+            </div>
+        </div>
+
+        <section id="somos-ventas">
+            <div class="container" style="display: flex; justify-content: center;">
+                <img src="/Template/media/CubaFashion.png" style="height: 300px; width: 300px;">
+                <div class="texto" style="position: relative; top:90px; left: 20px; width: 50%; text-align: center;">
+                    <h2><strong>Somos <span class="color-acento">CubaFashion!</span></strong></h2>
+                    <p>Un proyecto que tiene como objetivo contribuir al enriquecimiento
+                        del mercado informal, especificamente en lo relacionado con las ventas
+                        de garaje en nuestro país, con el fin de brindar un servicio más rápido
+                        y eficaz, garantizando la promoción y seguridad de las ventas.
+                    </p>
+                </div>
+            </div>
+            </div>
+        </section>
+
+
+
+    </main>
+
+    <div class="container">
+        <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
+            <div class="col-md-4 d-flex align-items-center">
+                <a href="/" class="mb-3 me-2 mb-md-0 text-muted text-decoration-none lh-1">
+                    <svg class="bi" width="30" height="24">
+                        <use xlink:href="#bootstrap" />
+                    </svg>
+                </a>
+                <span class="mb-3 mb-md-0 text-muted">&copy; 2023 CubaFashion, Inc</span>
+            </div>
+
+            <ul class="nav col-md-4 justify-content-end list-unstyled d-flex">
+                <li class="ms-3"><a href="#"><i class='bx bxl-twitter' style=" color: black; font-size: 30px;"></i></a>
+                </li>
+                <li class="ms-3"><a href="#"><i class='bx bxl-instagram' style="color: black; font-size: 30px;"></i></a>
+                </li>
+                <li class="ms-3"><a href="#"></a><i class='bx bxl-facebook-circle'
+                        style="color: black; font-size: 30px;"></i></li>
+            </ul>
+        </footer>
+    </div>
+
+    <script src="/Template/scripts/boxicons.js"></script>
+    <script src="/Template/scripts/bootstrap.bundle.min.js"
+        integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+        crossorigin="anonymous"></script>
+    <script src="/Template/scripts/jquery.min.js"></script>
+    <script src="/Template/scripts/jqvalidate.js"> </script>
+
+    <script src="/Template/scripts/index.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,58 @@
+{% extends 'header.html' %}
+{% block content %}
+<main class="relative">
+    <div class="c" style="">
+        <!--  <div class="texto" style=" position: relative; top:50px; left: 20px; width: 50%; text-align: center;"> -->
+        <div class="elemento" style="">
+            <h1 style="font-size: 70px;">
+                <strong>
+                    <span class="color-acento"> Editar Producto</span>
+                </strong>
+            </h1>
+        </div>
+        {% if isowner %}
+        <div class="elemento">
+            <form method='POST' , action="/editProducto/" enctype="multipart/form-data">
+                {% csrf_token %}
+                <input type="number" name="id" value="{{id}}" style="display: none;">
+                <label class="text" style="">Categoría </label>
+                <select name="categoria" class="form-control" required>
+                    <option value="{{cid}}">{{cnombre}}</option>
+                    {% for x in categorias %}
+                    <option value="{{x.id}}">{{x.nombre}}</option>
+                    {% endfor %}
+                </select>
+                <span class="error" style="color: red;">{{error_categoria}}</span>
+                <label class="text" style="">Nombre del producto </label>
+                <input type="text" name="nombre" class="form-control" placeholder="El nombre" value="{{nombre}}" required>
+                <span class="error" style="color: red;">{{error_nombre}}</span>
+                <label for="floatingInput">Precio</label>
+                <input type="number" name="precio" class="form-control" placeholder="Valor en cup :)" value="{{precio}}"  required>
+                <span class="error" style="color: red;">{{error_precio}}</span>
+                <label for="floatingInput">Cantidad</label>
+                <input type="number" name="cantidad" class="form-control" placeholder="Cantidad de mercancia disponible" value="{{cantidad}}" 
+                    required>
+                <span class="error" style="color: red;">{{error_cantidad}}</span>
+                <div class="le-tooltip-hover">
+                    <label for="floatingInput">Descuento</label>
+                    <input value="{{descuento}}" type="number" name="descuento" class="form-control dsa" placeholder="1" required>
+                    <span class="error" style="color: red;">{{error_descuento}}</span>
+                    <span class="le-tooltip" style="color: green;">Este valor es un multiplicador, 1 significa 100% del
+                        valor
+                        del producto, 0.95 significa 5% de descuento del valor del producto.</span>
+                </div>
+
+                <label for="floatingInput">Foto</label>
+                <input type="file" name="photo" class="form-control">
+                <span class="error" style="color: red;">{{error_photo}}</span>
+                <a href="/Template/prodList.html"><button class="button" type="button" style="color: white; margin-top: 30px; margin-left:180px;">Cancelar</button></a>
+                <button class="button" style="color: white; margin-top: 30px; margin-left:50px;" type="submit">Aceptar</button>
+
+            </form>
+
+            {% endif %}
+        </div>
+
+</main>
+
+{% endblock %}

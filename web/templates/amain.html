@@ -1,0 +1,27 @@
+{% extends 'aheader.html' %}
+{% block content %}
+<!-- Carrusel-->
+<main class="container">
+<label >Usuarios</label>
+  <table>
+    <tr>
+      <th>Nombre</th>
+      <th>Email</th>
+    </tr>
+    {% for x in xs %}
+    <tr>
+      <th>{{x.nombre}}</th>
+      <th>{{x.email}}</th>
+      <th>
+        <a href="/root/duser{{x.id}}">
+          <button type="button" style="color: white">Eliminar</button>
+        </a>
+      </th>
+    </tr>
+    {% endfor %}
+    
+  </table>
+
+</main>
+
+{% endblock %}

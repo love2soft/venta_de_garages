@@ -1,0 +1,36 @@
+{% extends 'aheader.html' %}
+{% block content %}
+<!-- Carrusel-->
+<main class="container">
+
+  <div style="border: 1px solid pink; background-color: pink;">
+    <p>Crear nueva categoría</p>
+    <form method="post" , action="/root/ccategoria">
+      {% csrf_token %}
+      <label>Nombre </label>
+      <br>
+      <input type="text" name="nombre" value="" required>
+      <br>
+      <button type="submint" >Crear</button>
+    </form>
+  </div>
+
+  <label>Garajes</label>
+  <table>
+    <tr>
+      <th>Nombre</th>
+    </tr>
+    {% for x in xs %}
+    <tr>
+      <th>{{x.nombre}}</th>
+      <th>
+        <a href="/root/dcategoria{{x.id}}">
+          <button type="button" style="color: white">Eliminar</button>
+        </a>
+      </th>
+    </tr>
+    {% endfor %}
+  </table>
+</main>
+
+{% endblock %}

@@ -1,0 +1,82 @@
+{% extends 'header.html' %}
+{% block content %}
+{% load tags %}
+<style>
+  footer{
+    display:none;
+  }
+</style>
+<!-- Carrusel-->
+<main class="container">
+  <div id="conteItemsCarrusel">
+    {% for x in carrusel %}
+    <div class="itemCarrusel" id="itemCarrusel-5" onclick="garage({{x.garage.id}})">
+      <div class="tarjetaCarrusel">
+        <img src="{{x.photo.url}}" class="d-block w-100">
+      </div>
+      <div class="flechasCarrusel">
+        <a href="#" onclick="apply_patch(
+                    {% if forloop.counter == 1 %}
+                    {{carrusel_len|sub:forloop.counter}}
+                    {% else %}
+                    {{forloop.counter|sub:2}}
+                    {% endif %}
+          )">
+          <i class='bx bx-chevron-left'></i>
+        </a>
+        <a href=" #" onclick="apply_patch(
+                    {% if forloop.counter == carrusel_len %}
+                      0
+                    {% else %}
+                      {{forloop.counter}}
+                    {% endif %}
+          )">
+          <i class='bx bx-chevron-right'></i>
+        </a>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+  <div id="contePuntos">
+    {% for x in carrusel %}
+    <a href="#" onclick="apply_patch({{forloop.counter|sub:1}})"><i class='bx bx-wifi-0'></i></a>
+    {% endfor %}
+  </div>
+
+  <h6><strong>Productos más vendidos</strong></h6>
+
+
+  <div class="container-items">
+    {% for element in productos %}
+    <div class="item" onclick="product({{element.id}})">
+      <figure>
+        <img src="{{element.photo.url}}" alt="producto" />
+      </figure>
+      <div class="info-product">
+        <h4>{{element.nombre}}</h4>
+        <p class="price"></p>${{element.precio}}</p>
+        <button>Más información</button>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+
+  <section id="somos-ventas" class="sectioabout">
+    <div class="container" style="display: flex; justify-content: center;">
+      <img src="/Template/media/CubaFashion.png" style="height: 300px; width: 300px;">
+      <div class="texto" style="position: relative; top:90px; left: 20px; width: 50%; text-align: center;">
+        <h2><strong>Somos <span class="color-acento">CubaFashion!</span></strong></h2>
+        <p>Un proyecto que tiene como objetivo contribuir al enriquecimiento
+          del mercado informal, especificamente en lo relacionado con las ventas
+          de garaje en nuestro país, con el fin de brindar un servicio más rápido
+          y eficaz, garantizando la promoción y seguridad de las ventas.</p>
+      </div>
+    </div>
+    </div>
+  </section>
+
+  <!--Hola amor <3- te amoooo-->
+
+</main>
+
+{% endblock %}

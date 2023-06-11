@@ -1,0 +1,38 @@
+{% extends 'header.html' %}
+{% block content %}
+  <main class="container">
+
+
+    <div class="container-items" style="margin-top: 30px;">
+      <!-- 1-->
+      {% for z in x %}
+      {% if not z.owner %} 
+      <div class="items" onclick="product({{z.id}})">
+        <figure>
+          <img src="{{z.photo.url}}" alt="producto" />
+        </figure>
+        <div class="info-product">
+          <h4>{{z.nombre}}</h4>
+          <p class="price"></p>${{z.precio}}</p>
+          <button style="background-color:rgb(77, 128, 238);">Más información</button>
+        </div>
+      </div>
+      {% else %}
+      <div class="items" onclick="product({{z.id}})">
+        <figure>
+          <img src="{{z.photo.url}}" alt="producto" />
+        </figure>
+        <div class="info-product">
+          <h4>{{z.nombre}}</h4>
+          <p class="price"></p><strong>Dueño:</strong> <br>{{z.owner}}</p>
+          <button style="background-color:rgb(77, 128, 238);">Más información</button>
+        </div>
+      </div>
+      {% endif %}
+
+      {% endfor %}
+    </div>
+
+  </main>
+
+{% endblock %}

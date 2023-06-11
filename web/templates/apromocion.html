@@ -1,0 +1,26 @@
+{% extends 'aheader.html' %}
+{% block content %}
+<main class="container">
+  <label>Promociones</label>
+  <table>
+    <tr>
+      <th>Garage</th>
+      <th>Foto</th>
+    </tr>
+    {% for x in xs %}
+    <tr>
+      <th>{{x.garage.nombre}}</th>
+      <th><img src="{{x.photo.url}}" alt="photo" style="width: 64px;"></th>
+      <th>
+        <a href="/root/dpromocion{{x.id}}">
+          <button type="button" style="color: white">Eliminar</button>
+        </a>
+      </th>
+    </tr>
+    {% endfor %}
+
+  </table>
+
+</main>
+
+{% endblock %}

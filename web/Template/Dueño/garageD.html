@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <link rel="stylesheet" href="/Template/css/style.css">
+
+    <title>Ventas de Garajes</title>
+    
+</head>
+<body>
+  <header class="p-3 text-bg" style="position: relative; top: -10px; height: 100px; background-color: rgb(124, 2, 67);">
+    <div class="container">
+      <a class="navbar-brand" href="/Template/Dueño/duenno.html"><img src="/Template/media/CubaFashion.png" alt="" style="position: relative;top:4px;left:-100px; width: 70px;"></a>
+      <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+        <a href="/" class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none">
+          
+        </a>
+
+        <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0" style="position: relative; top: -50px; left: -30px;">
+          <li><a href="/Template/Dueño/duenno.html" class="nav-link px-2 text-white">Home</a></li>
+          <li><a class="nav-link dropdown-toggle px-2 text-white" href="#" role="button" data-bs-toggle="dropdown">
+                Garajes
+              </a>
+              <ul class="dropdown-menu">
+                 <li><a class="dropdown-item" href="/Template/Dueño/AnadirGarD.html">Añadir garaje</a></li>
+              </ul>
+          </li>
+          <li><a class="nav-link dropdown-toggle px-2 text-white" href="#" role="button" data-bs-toggle="dropdown">
+                Productos
+              </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="/Template/Dueño/prodDuenno.html">Productos</a></li>
+                <li><a class="dropdown-item" href="/Template/Dueño/AdministrarMer.html">Añadir producto</a></li>
+                <li><a class="dropdown-item" href="/Template/Dueño/Promocion.html">Añadir promoción</a></li>
+              </ul>
+          </li>
+          <li><a href="#somos-ventas" class="nav-link px-2 text-white">Acerca de</a></li>
+        </ul>
+
+        <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3" role="search" style="position: relative; top: -50px; left: 80px;">
+            <input type="search" class="form-control form-control-dark text-bg" placeholder="Buscar..." aria-label="Search">
+          </form>
+  
+          <div class="text-end" style="position: relative; top: -50px; left: 80px;">
+            <a><i class='bx bx-user-circle' style="color: white; font-size: 30px;"></i></a>
+          </div>
+            
+              <a class="nav-link dropdown-toggle text-white" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="position: relative; top: -50px; left: 100px;">
+                ES
+              </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#"><img src="/Template/media/icons/icons8-usa-100.png" style="width: 30px;">EN</a></li>
+              </ul>
+    </div>
+  </div>
+</header>
+
+<main class="container">
+  <section id="garage">
+    <div class="container" style="display: flex; justify-content: center;">
+      <img src="/Template/media/CubaFashion.png" style="height: 300px; width: 300px; border-radius: 80px;">
+        <div class="texto" style=" position: relative; top:90px; left: 20px; width: 50%; text-align: center;">
+          <h1 style="font-size: 80px;"><strong><span class="color-acento">Garajes</span></strong></h1>
+          <a href="/Template/Dueño/AnadirGarD.html"><button type="button" class="btn btn text-white"  style=" position: relative; top: 30px; left: 50px; float: right; background-color: rgb(124, 2, 67);font-size: 30px;"><strong>Añadir garaje</strong></button></a>
+        </div>
+      </div>
+    </div>
+</section>
+
+<div class="container-items" style="margin-top: 30px;">
+  <!-- 1-->
+  <div class="items">
+    <figure>
+      <img src="/Template/media/garage6.jpeg" alt="producto"/>
+    </figure>
+    <div class="info-product">
+      <h4>Praiso</h4>
+      <p class="price"></p><strong>Dueño:</strong> John Doe</p>
+      <button style="background-color:rgb(77, 128, 238);">Visitar</button>
+    </div>
+  </div>
+   <!-- 2-->
+  <div class="items">
+    <figure>
+      <img src="/Template/media/garaje3.jpg" alt="producto"/>
+    </figure>
+    <div class="info-product">
+      <h4>Sports</h4>
+      <p class="price"></p><strong>Dueño:</strong> Lola Mento </p>
+      <button style="background-color:rgb(77, 128, 238);">Visitar</button>
+    </div>
+  </div>
+   <!-- 3-->
+  <div class="items">
+    <figure>
+      <img src="/Template/media/garage2.jpg" alt="producto"/>
+    </figure>
+    <div class="info-product">
+      <h4>Le monde</h4>
+      <p class="price"></p><strong>Dueño:</strong> Yary Duarte</p>
+      <button style="background-color:rgb(77, 128, 238);">Visitar</button>
+    </div>
+  </div>
+   <!-- 4-->
+  <div class="items">
+    <figure>
+      <img src="/Template/media/garage4.jpg" alt="producto"/>
+    </figure>
+    <div class="info-product">
+      <h4>Exclusive</h4>
+      <p class="price"></p><strong>Dueño:</strong>Melody Casas</p>
+      <button  style="background-color:rgb(77, 128, 238);">Visitar</button>
+    </div>
+  </div>
+   <!-- 5-->
+  <div class="items">
+    <figure>
+      <img src="/Template/media/garage7.png" alt="producto"/>
+    </figure>
+    <div class="info-product">
+      <h4>Moon</h4>
+      <p class="price"></p><strong>Dueño:</strong> Naty Rodríguez</p>
+      <button  style="background-color:rgb(77, 128, 238);">Visitar</button>
+    </div>
+  </div>
+   <!-- 6-->
+  <div class="items">
+    <figure>
+      <img src="/Template/media/garage8.webp" alt="producto"/>
+    </figure>
+    <div class="info-product">
+      <h4>Red House</h4>
+      <p class="price"></p><strong>Dueño:</strong>Leo Díaz</p>
+      <button  style="background-color:rgb(77, 128, 238);">Visitar</button>
+    </div>
+  </div>
+   <!-- 7-->
+  <div class="items">
+    <figure>
+      <img src="/Template/media/garage9.webp" alt="producto"/>
+    </figure>
+    <div class="info-product">
+      <h4>Fashion</h4>
+      <p class="price"></p><strong>Dueño:</strong>Nath Sánchez</p>
+      <button  style="background-color:rgb(77, 128, 238);">Visitar</button>
+    </div>
+  </div>
+   <!-- 8-->
+  <div class="items">
+    <figure>
+      <img src="/Template/media/garage10.webp" alt="producto"/>
+    </figure>
+    <div class="info-product">
+      <h4>Gran Avenida</h4>
+      <p class="price"></p><strong>Dueño:</strong> Alan Brito</p>
+      <button  style="background-color:rgb(77, 128, 238);">Visitar</button>
+    </div>
+  </div>
+   <!-- 9-->
+  <div class="items">
+    <figure>
+      <img src="/Template/media/garage11.jpeg" alt="producto"/>
+    </figure>
+    <div class="info-product">
+      <h4>B&W</h4>
+      <p class="price"></p><strong>Dueño:</strong> Dailis Norde</p>
+      <button  style="background-color:rgb(77, 128, 238);">Visitar</button>
+    </div>
+  </div>
+   <!-- 10-->
+  <div class="items">
+    <figure>
+      <img src="/Template/media/garage12.jpg" alt="producto"/>
+    </figure>
+    <div class="info-product">
+      <h4>Orange</h4>
+      <p class="price"></p><strong>Dueño:</strong> Enier Barban</p>
+      <button  style="background-color:rgb(77, 128, 238);">Visitar</button>
+    </div>
+  </div>
+   <!-- 11-->
+  <div class="items">
+    <figure>
+      <img src="/Template/media/garaje13.jpg" alt="producto"/>
+    </figure>
+    <div class="info-product">
+      <h4>Industriales</h4>
+      <p class="price"></p><strong>Dueño:</strong>Carlos Ramírez</p>
+      <button  style="background-color:rgb(77, 128, 238);">Visitar</button>
+    </div>
+  </div>
+   <!-- 12-->
+  <div class="items">
+    <figure>
+      <img src="/Template/media/garage14.jpg" alt="producto"/>
+    </figure>
+    <div class="info-product">
+      <h4>La Esquina Hot</h4>
+      <p class="price"></p><strong>Dueño:</strong> Alain Jiménez</p>
+      <button  style="background-color:rgb(77, 128, 238);">Visitar</button>
+    </div>
+  </div>
+   <!-- 13-->
+  <div class="items">
+    <figure>
+      <img src="/Template/media/garaje15.jpg" alt="producto"/>
+    </figure>
+    <div class="info-product">
+      <h4>Entabla2</h4>
+      <p class="price"></p><strong>Dueño:</strong> Lisauri Núñez</p>
+      <button  style="background-color:rgb(77, 128, 238);">Visitar</button>
+    </div>
+  </div>
+   <!-- 14-->
+  <div class="items">
+    <figure>
+      <img src="/Template/media/garaje16.jpg" alt="producto"/>
+    </figure>
+    <div class="info-product">
+      <h4>All Star</h4>
+      <p class="price"></p><strong>Dueño:</strong>Daniela Peacok</p>
+      <button  style="background-color:rgb(77, 128, 238);">Visitar</button>
+    </div>
+  </div>
+   <!-- 15-->
+  <div class="items">
+    <figure>
+      <img src="/Template/media/garaje17.webp" alt="producto"/>
+    </figure>
+    <div class="info-product">
+      <h4>Etiqueta</h4>
+      <p class="price"></p><strong>Dueño:</strong> Miguel Jiménez</p>
+      <button  style="background-color:rgb(77, 128, 238);">Visitar</button>
+    </div>
+  </div>
+   <!-- 16-->
+  <div class="items">
+    <figure>
+      <img src="/Template/media/garaje18.webp" alt="producto"/>
+    </figure>
+    <div class="info-product">
+      <h4>Electronic</h4>
+      <p class="price"></p><strong>Dueño:</strong>Ediel Artidiello</p>
+      <button  style="background-color:rgb(77, 128, 238);">Visitar</button>
+    </div>
+  </div>
+   <!-- 17-->
+  <div class="items">
+    <figure>
+      <img src="/Template/media/garaje19.webp" alt="producto"/>
+    </figure>
+    <div class="info-product">
+      <h4>Pink</h4>
+      <p class="price"></p><strong>Dueño:</strong> Armando Paredes</p>
+      <button  style="background-color:rgb(77, 128, 238);">Visitar</button>
+    </div>
+  </div>
+   <!-- 18-->
+  <div class="items">
+    <figure>
+      <img src="/Template/media/garaje20.jpg" alt="producto"/>
+    </figure>
+    <div class="info-product">
+      <h4>"BOOM"</h4>
+      <p class="price"></p><strong>Dueño:</strong> María Sánchez</p>
+      <button  style="background-color:rgb(77, 128, 238);">Visitar</button>
+    </div>
+  </div>
+   <!-- 19-->
+  <div class="items">
+    <figure>
+      <img src="/Template/media/garaje21.jpg" alt="producto"/>
+    </figure>
+    <div class="info-product">
+      <h4>Vedado</h4>
+      <p class="price"></p><strong>Dueño:</strong>Sofía López</p>
+      <button  style="background-color:rgb(77, 128, 238);">Visitar</button>
+    </div>
+  </div>
+   <!-- 20-->
+  <div class="items">
+    <figure>
+      <img src="/Template/media/garaje22.jpg" alt="producto"/>
+    </figure>
+    <div class="info-product">
+      <h4>Estilo Propio</h4>
+      <p class="price"></p><strong>Dueño:</strong>Gretel Cruz</p>
+      <button  style="background-color:rgb(77, 128, 238);">Visitar</button>
+    </div>
+  </div>
+   <!-- 21-->
+  <div class="items">
+    <figure>
+      <img src="/Template/media/garaje23.webp" alt="producto"/>
+    </figure>
+    <div class="info-product">
+      <h4>AhíTeEspero</h4>
+      <p class="price"></p><strong>Dueño:</strong>Melissa Treto</p>
+      <button  style="background-color:rgb(77, 128, 238);">Visitar</button>
+    </div>
+  </div>
+   <!-- 22-->
+  <div class="items">
+    <figure>
+      <img src="/Template/media/garaje24.jpg" alt="producto"/>
+    </figure>
+    <div class="info-product">
+      <h4>Facturanding</h4>
+      <p class="price"></p><strong>Dueño:</strong>David Fernández</p>
+      <button  style="background-color:rgb(77, 128, 238);">Visitar</button>
+    </div>
+  </div>
+   <!-- 23-->
+  <div class="items">
+    <figure>
+      <img src="/Template/media/garaje25.webp" alt="producto"/>
+    </figure>
+    <div class="info-product">
+      <h4>Top Secret</h4>
+      <p class="price"></p><strong>Dueño:</strong>Guillermo Plascencia</p>
+      <button  style="background-color:rgb(77, 128, 238);">Visitar</button>
+    </div>
+  </div>
+   <!-- 24-->
+  <div class="items">
+    <figure>
+      <img src="/Template/media/garaje26.jpeg" alt="producto"/>
+    </figure>
+    <div class="info-product">
+      <h4>Garage's</h4>
+      <p class="price"></p><strong>Dueño:</strong>Matyane Váldez</p>
+      <button  style="background-color:rgb(77, 128, 238);">Visitar</button>
+    </div>
+  </div>
+
+
+
+  
+
+</div>
+
+<section id="somos-ventas">
+  <div class="container" style="display: flex; justify-content: center;">
+    <img src="/Template/media/CubaFashion.png" style="height: 300px; width: 300px;">
+      <div class="texto" style="position: relative; top:90px; left: 20px; width: 50%; text-align: center;">
+        <h2><strong>Somos <span class="color-acento">CubaFashion!</span></strong></h2>
+        <p>Un proyecto que tiene como objetivo contribuir al enriquecimiento
+          del mercado informal, especificamente en lo relacionado con las ventas 
+          de garaje en nuestro país, con el fin de brindar un servicio más rápido 
+          y eficaz, garantizando la promoción y seguridad de las ventas.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<div class="container" style="margin-top: 80px;">
+  <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
+    <div class="col-md-4 d-flex align-items-center">
+      <a href="/" class="mb-3 me-2 mb-md-0 text-muted text-decoration-none lh-1">
+        <svg class="bi" width="30" height="24"><use xlink:href="#bootstrap"/></svg>
+      </a>
+      <span class="mb-3 mb-md-0 text-muted">&copy; 2023 CubaFashion, Inc</span>
+    </div>
+
+    <ul class="nav col-md-4 justify-content-end list-unstyled d-flex">
+      <li class="ms-3"><a href="#"><i class='bx bxl-twitter' style=" color: black; font-size: 30px;"></i></a></li>
+      <li class="ms-3"><a href="#"><i class='bx bxl-instagram' style="color: black; font-size: 30px;"></i></a></li>
+      <li class="ms-3"><a href="#"></a><i class='bx bxl-facebook-circle' style="color: black; font-size: 30px;"></i></li>
+    </ul>
+  </footer>
+</div>
+
+<script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+<script src="/Template/scripts/jquery.min.js"></script>
+<script src="/Template/scripts/jqvalidate.js"> </script> 
+
+<script src="/Template/scripts/index.js"></script>
+</body>
+</html>

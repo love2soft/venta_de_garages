@@ -1,0 +1,42 @@
+{% extends 'header.html' %}
+{% block content %}
+<main class="relative">
+    <div class="c" style="" >
+        <!--  <div class="texto" style=" position: relative; top:50px; left: 20px; width: 50%; text-align: center;"> -->
+        <div class="elemento" style="">
+            <h1 style="font-size: 70px;">
+                <strong>
+                    <span class="color-acento">Modificar Garajes</span>
+                </strong>
+            </h1>
+        </div>
+    {% if isowner and glen == 1 %}
+    <div class="elemento">
+        <form method='POST', action="/editGarage/" enctype="multipart/form-data">
+          {% csrf_token %}
+        <input type="number" name="id" value="{{x.id}}" style="display: none;"/>
+        <label class="text" style="">Nombre del garaje </label>
+        <input type="text" name="nombre" class="form-control" placeholder="El nombre" value={{x.nombre}} required>
+        <span class="error" style="color: red;">{{error_nombre}}</span>
+        <label for="floatingInput">Nombre del propietario </label>
+        <input type="text" name="owner" class="form-control"  placeholder="John Doe" value={{x.owner}}  required>
+        <span class="error" style="color: red;">{{error_owner}}</span>
+        <label for="floatingInput">Dirección del garaje </label>
+        <input type="text" name="address" class="form-control"  placeholder="123 #123 e/asd y dsa" value={{x.address}}  required>
+        <span class="error" style="color: red;">{{error_address}}</span>
+        <label for="floatingInput">Teléfono</label>
+        <input type="text" name="telephone" class="form-control"  placeholder="+53XXXXXXXX" value={{x.telephone}}  required>
+        <span class="error" style="color: red;">{{error_telephone}}</span>
+        <label for="floatingInput">Foto</label>
+        <input type="file" name="photo" class="form-control">
+        <span class="error" style="color: red;">{{error_photo}}</span>
+        <a href="/Template/prodList.html">
+            <button class="buttonform" style="color: white" type="button">Cancelar</button>
+        </a>
+        <button class="buttonform" style="color: white" type="submit" >Aceptar</button>
+        </form>
+    </div>
+    {% endif %}
+</main>
+
+{% endblock %}
